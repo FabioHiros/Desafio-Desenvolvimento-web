@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+<div class="user">
+    <!-- <h1>ID</h1>
+    <h2>{{data}}</h2> -->
+    <h1>Nome</h1>
+    <h2>{{data['nome']}}</h2>
+    <h1>Email</h1>
+    <h2>{{data['email']}}</h2>
+    <h1>Função</h1>
+    <h2>{{data['funcao']}}</h2>
+   <!-- <h2>{{data['password']}}</h2> -->
+   <h1>Nota</h1>
+   <h2>{{data['nota']}}</h2>
+</div>
+
+
+<a href="/" type="button" class="btn btn-dark">Logout</a>
+
+
+
+
+{% endblock %}
+
+
+
+

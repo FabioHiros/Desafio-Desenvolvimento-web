@@ -1,0 +1,68 @@
+body {
+    background: url(https://assets.gamearena.gg/wp-content/uploads/2023/08/29220633/Sea-of-Stars-Vista-de-Brisk.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    font-family: 'Pixelify Sans', sans-serif;
+    color: aqua;
+}
+
+/* picture{
+    position: relative;
+} */
+
+.img1 {
+    position: absolute;
+    z-index: 0;
+
+
+}
+
+.img2 {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+
+
+}
+
+.rar {
+    display: flex;
+    max-width: 69.8%;
+    /* justify-content: space-between; */
+    place-content: end space-between;
+
+
+}
+
+ads{
+    height: fit-content;
+    width: 80%;
+    background-color: aliceblue;
+    color: black;
+    z-index: 3;
+}
+
+.user{
+    background-image: url(https://i.pinimg.com/736x/11/e0/3c/11e03c1926d6387beaa2529c354f5752.jpg);
+    background-size: cover;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+text-align: center;
+margin: 0
+;
+
+}
