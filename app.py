@@ -1,16 +1,14 @@
 from flask import Flask,render_template, request , Response,jsonify,make_response,redirect,session,flash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text,create_engine
-import json
 from crud import pessoadb,select_user
-import bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask("__name__")
 app.secret_key = '_5#y2L"F4dasQ8dasdasc]/'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+mysqlconnector://root:159753@localhost:3306/bddesafio3'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+mysqlconnector://admin:123456789@database-1.cnlixgndfpjt.us-east-1.rds.amazonaws.com:3306/dbdesafio5'
 #variavel contendo o caminho para o banco de dados
-db_connection_string = 'mysql+mysqlconnector://root:159753@localhost:3306/bddesafio3'
+db_connection_string = 'mysql+mysqlconnector://admin:123456789@database-1.cnlixgndfpjt.us-east-1.rds.amazonaws.com:3306/dbdesafio5'
 
 #conecta no banco de dados
 engine = create_engine(

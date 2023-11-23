@@ -9,12 +9,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 # db_connection_string = 'mysql+mysqlconnector://root:159753@localhost/bddesafio3'
 
 app=Flask('__name__')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:159753@localhost:3306/bddesafio3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://admin:123456789@database-1.cnlixgndfpjt.us-east-1.rds.amazonaws.com:3306/dbdesafio5'
 db = SQLAlchemy(app)
 
 
 #variavel contendo o caminho para o banco de dados
-db_connection_string = 'mysql+mysqlconnector://root:159753@localhost:3306/bddesafio3'
+db_connection_string = 'mysql+mysqlconnector://admin:123456789@database-1.cnlixgndfpjt.us-east-1.rds.amazonaws.com:3306/dbdesafio5'
 
 #conecta no banco de dados
 engine = create_engine(
