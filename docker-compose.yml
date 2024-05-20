@@ -2,16 +2,24 @@ version: "3.3"
 services:
   app:
     build: ./src
-    links:
-      - db
+    depends_on:
+      db:
+        condition: service_healthy
     ports:
       - "5000:5000"
+    links:
+      - db
+
   db:
     image: mysql:latest
     ports:
       - "3306:3306"
-    enviroment:
+    environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: dbdesafio5
       MYSQL_USER: admin
       MYSQL_PASSWORD: 123456789
+    healthcheck:
+      test: ["CMD", "mysql", "-h", "localhost", "-uadmin", "-p123456789", "-e", "SELECT 1"]
+      interval: 10s
+      retries: 5

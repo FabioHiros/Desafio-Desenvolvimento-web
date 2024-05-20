@@ -6,9 +6,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask("__name__")
 app.secret_key = '_5#y2L"F4dasQ8dasdasc]/'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
-app.config['SQLALCHEMY_DATABASE_URI']='mysql+mysqlconnector://admin:123456789@db:3306/dbdesafio5'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql+mysqlconnector://admin:123456789@dbdesafio5.cl64ekaqq8ka.us-east-1.rds.amazonaws.com:3306/dbdesafio5'
 #variavel contendo o caminho para o banco de dados
-db_connection_string = 'mysql+mysqlconnector://admin:123456789@db:3306/dbdesafio5'
+db_connection_string = 'mysql+mysqlconnector://admin:123456789@dbdesafio5.cl64ekaqq8ka.us-east-1.rds.amazonaws.com:3306/dbdesafio5'
 
 #conecta no banco de dados
 engine = create_engine(
