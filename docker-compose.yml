@@ -2,6 +2,7 @@ version: "3.3"
 services:
   app:
     build: ./src
+    restart: always
     depends_on:
       db:
         condition: service_healthy
@@ -23,3 +24,12 @@ services:
       test: ["CMD", "mysql", "-h", "localhost", "-uadmin", "-p123456789", "-e", "SELECT 1"]
       interval: 10s
       retries: 5
+    restart: always
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+      - app
