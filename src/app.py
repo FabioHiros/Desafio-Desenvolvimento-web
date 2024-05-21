@@ -2,6 +2,7 @@ from flask import Flask,render_template, request , Response,jsonify,make_respons
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text,create_engine
 from crud import pessoadb,select_user
+import socket
 from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = '_5#y2L"F4dasQ8dasdasc]/'
@@ -84,6 +85,15 @@ def user():
 def select(id):
     user=select_user(id)
     return render_template('user.html',data=user)
+
+@app.route('/maquina')
+def maquina():
+    # client_ip = request.remote_addr
+    backend_ip = socket.gethostbyname(socket.gethostname())
+    # app.logger.info(f"Request from client IP: {client_ip}, served by backend IP: {backend_ip}")
+    return render_template('load.html',data=backend_ip)
+
+
 
 
 #Login
