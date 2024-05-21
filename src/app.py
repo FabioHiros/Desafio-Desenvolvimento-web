@@ -112,3 +112,6 @@ def cadastro(data):
       conn.execute(text(f"INSERT INTO pessoas( nome, email, funcao, password, nota) VALUES ( '{data['nome']}', '{data['email']}', '{data['funcao']}', '{generate_password_hash(data['password'],method='pbkdf2',salt_length=16)}','{data['nota']}')"))
     
       conn.commit()
+
+if __name__==__main__:
+    app.run()
