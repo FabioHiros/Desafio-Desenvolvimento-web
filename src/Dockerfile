@@ -5,8 +5,12 @@ WORKDIR /src
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
+# Install Gunicorn
+RUN pip install gunicorn
+
 COPY . .
 
-EXPOSE 5000/tcp
+EXPOSE 8000/tcp
 
-CMD ["python3","-m","flask","run","--host=0.0.0.0"]
+# Run the application with Gunicorn
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
