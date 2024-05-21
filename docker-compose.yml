@@ -7,7 +7,7 @@ services:
       db:
         condition: service_healthy
     ports:
-      - "5000:5000"
+      - "8000:8000"
     links:
       - db
 
@@ -25,11 +25,3 @@ services:
       interval: 10s
       retries: 5
     restart: always
-
-  nginx:
-    build: ./nginx
-    ports:
-      - "80:80"
-    depends_on:
-      - db
-      - app
